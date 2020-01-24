@@ -1,4 +1,4 @@
-# Test file for "Lab4_SMsDDL"
+# Test file for "Lab3_BitManipulation"
 
 
 # commands.gdb provides the following functions for ease:
@@ -26,122 +26,40 @@
 echo ======================================================\n
 echo Running all tests..."\n\n
 
-test "Increase test: PINA: 0x01, 0x01, 0x00, 0x01 => PORTC: 0x09, state: waitPress"
-set count = startState
+test "PINA: 0x01 => PORTC: 0x60"
 setPINA 0x01
 continue 2
-setPINA 0x01
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x01
-continue 2
-expectPORTC 0x09
-expect count waitPress
+expectPORTC 0x60
 checkResult
 
-test "Excess 9 test: PINA: 0x01, 0x00, 0x01, 0x00, 0x01, 0x00 => PORTC: 0x09, state: init"
-set count = startState
-setPINA 0x01
+test "PINA: 0x04 => PORTC: 0x70"
+setPINA 0x04
 continue 2
-setPINA 0x00
-continue 2
-setPINA 0x01
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x01
-continue 2
-setPINA 0x00
-continue 2
-expectPORTC 0x09
-expect count init
+expectPORTC 0x70
 checkResult
 
-test "Decrease test: PINA: 0x02, 0x00, 0x02, 0x00, 0x02, 0x00, ... , 0x02, 0x00 => PORTC: 0x01, state: init"
-set count = startState
-setPINA 0x02
+test "PINA: 0x05 => PORTC: 0x38"
+setPINA 0x05
 continue 2
-setPINA 0x00
-continue 2
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-expectPORTC 0x01
-expect count init
+expectPORTC 0x38
 checkResult
 
-
-test "Reach the bottom test: PINA: 0x02, 0x00, 0x02, 0x00, 0x02, 0x00, ... , 0x02, 0x00 => PORTC: 0x00, state: init"
-set count = startState
-setPINA 0x02
+test "PINA: 0x07 => PORTC: 0x3C"
+setPINA 0x07
 continue 2
-setPINA 0x00
-continue 2
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x02
-continue 2
-setPINA 0x00
-continue 2
-expectPORTC 0x00
-expect count init
+expectPORTC 0x3C
 checkResult
 
-test "Reset test: PINA: 0x02, 0x00, 0x01, 0x00, 0x03, 0x00 => PORTC: 0x00, state: reset"
-set count = startState
-setPINA 0x02
+test "PINA: 0x0C => PORTC: 0x3E"
+setPINA 0x0C
 continue 2
-setPINA 0x00
+expectPORTC 0x3E
+checkResult
+
+test "PINA: 0x0F => PORTC: 0x3F"
+setPINA 0x0F
 continue 2
-setPINA 0x01
-continue 2
-setPINA 0x00
-continue 2
-setPINA 0x03
-continue 2
-setPINA 0x00
-continue 2
-expectPORTC 0x00
+expectPORTC 0x3F
 checkResult
 
 
