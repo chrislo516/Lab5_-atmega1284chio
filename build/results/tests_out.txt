@@ -1,0 +1,7 @@
+Breakpoint 1 at 0x24c: file source/main.c, line 101.
+Note: automatically using hardware breakpoints for read-only addresses.
+======================================================
+Running all tests..."
+
+"Increase test: PINA: 0x01, 0x01, 0x00, 0x01 => PORTC: 0x09, state: waitPress"..."Excess 9 test: PINA: 0x01, 0x00, 0x01, 0x00, 0x01, 0x00 => PORTC: 0x09, state: init"..."Decrease test: PINA: 0x02, 0x00, 0x02, 0x00, 0x02, 0x00, ... , 0x02, 0x00 => PORTC: 0x01, state: init"..."Reach the bottom test: PINA: 0x02, 0x00, 0x02, 0x00, 0x02, 0x00, ... , 0x02, 0x00 => PORTC: 0x00, state: init"..."Reset test: PINA: 0x02, 0x00, 0x01, 0x00, 0x03, 0x00 => PORTC: 0x00, state: reset"...======================================================
+Remote doesn't know how to detach
